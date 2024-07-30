@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+bs4 = "*"
+termcolor = "*"
+typer = "*"
+build = "*"
+typing-extensions = "*"
+
+[dev-packages]
+pre-commit = "3.7.0"
+
+[scripts]
+build = "python3 -m build"
+
+[requires]
+python_version = "3.11"
