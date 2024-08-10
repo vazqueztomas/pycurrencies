@@ -1,11 +1,10 @@
 name: Semantic release
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-
+    push:
+      branches: ["automatic-semantic-release"]
+    pull_request:
+      branches: ["automatic-semantic-release"]
 jobs:
   build:
     runs-on: ubuntu-latest
