@@ -26,3 +26,10 @@ class BitcoinScrapper:
             Venta: ${colored(venta, "red", "on_black")}
         """
         )
+
+    def send_bitcoin_price(self, number1: int, number2: int) -> str:
+        return f"""
+            Los valores actuales del bitcoin son:
+            Compra: ${number1}
+            Venta: ${number2}
+        """

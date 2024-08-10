@@ -26,3 +26,11 @@ class DolarScrapper:
 
             El {colored("promedio", "blue", "on_black")} de estos valores es: {colored(f"${(number1 + number2) / 2}", "blue", "on_black")}
         """
+
+    def send_dollar_price(self, number1: int, number2: int) -> str:
+        return f"""
+            Los valores actuales del dólar blue son:
+            Compra: ${number1}
+            Venta: ${number2}
+            El promedio de estos valores es: ${(number1 + number2) / 2}
+        """
