@@ -10,12 +10,15 @@ termcolor = "*"
 typer = "*"
 build = "*"
 typing-extensions = "*"
+pytelegrambotapi = "*"
 
 [dev-packages]
 pre-commit = "3.7.0"
+pylint = "*"
 
 [scripts]
 build = "python3 -m build"
+format = "pre-commit run --all-files"
 
 [requires]
 python_version = "3.11"

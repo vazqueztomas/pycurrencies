@@ -1,19 +1,20 @@
-from bs4 import BeautifulSoup
 import requests
 from termcolor import colored
 
 
 class BitcoinScrapper:
-    def __init__(self, url) -> None:
-        self.ulr = url
+    """Bitcoin Scrapper class"""
 
-    def scrape_bitcoin_values(self) -> int:
-        page = requests.get(self.url)
-        soup = BeautifulSoup(page.content, "html.parser")
-        bitcoin_values = soup.find_all("div", class_="val")
-        compra = int(bitcoin_values[0].get_text()[1:])
-        venta = int(bitcoin_values[1].get_text()[1:])
-        return compra, venta
+    def __init__(self, url) -> None:
+        self.url = url
+
+    def scrape_bitcoin_values(self) -> int | str | None:
+        try:
+            page = requests.get(self.url)
+            price = page.json()["bpi"]["USD"]["rate"]
+        except (requests.exceptions.RequestException, KeyError):
+            return None
+        return price
 
     def print_bitcoin_price(self, compra: int, venta: int) -> str:
         print(
@@ -24,3 +25,8 @@ class BitcoinScrapper:
             Venta: ${colored(venta, "red", "on_black")}
         """
         )
+
+    def send_bitcoin_price(self, price) -> str:
+        return f"""
+            El valor actual de Bitcoin es de {price} USD.
+        """
