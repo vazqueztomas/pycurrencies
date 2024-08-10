@@ -26,8 +26,6 @@ jobs:
           pip install pipenv
           pipenv install --dev
 
-      - name: Check python-semantic-release installation
-        run: pip show python-semantic-release
 
       - name: Print pyproject.toml content
         run: cat pyproject.toml
