@@ -4,11 +4,13 @@ from termcolor import colored
 
 
 class DolarScrapper:
+    """Dolar Scrapper class"""
+
     def __init__(self, url) -> None:
         self.url = url
 
     def scrape_dolar_values(self) -> int:
-        page = requests.get(self.url)
+        page = requests.get(self.url, timeout=10)
         soup = BeautifulSoup(page.content, "html.parser")
         dolar_values = soup.find_all("div", class_="val")
         compra = int(dolar_values[0].get_text()[1:])

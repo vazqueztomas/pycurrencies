@@ -42,12 +42,6 @@ def main(
             "--dolar", "-d", help="Obtener información del dólar", is_flag=True
         ),
     ] = None,
-    bitcoin: Annotated[
-        Optional[bool],
-        typer.Option(
-            "--bitcoin", "-b", help="Obtener información del bitcoin", is_flag=True
-        ),
-    ] = None,
 ):
     print(welcome_message())
     if dolar is not None:

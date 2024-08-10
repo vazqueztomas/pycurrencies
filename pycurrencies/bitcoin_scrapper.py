@@ -4,11 +4,13 @@ from termcolor import colored
 
 
 class BitcoinScrapper:
+    """Bitcoin Scrapper class"""
+
     def __init__(self, url) -> None:
         self.ulr = url
 
     def scrape_bitcoin_values(self) -> int:
-        page = requests.get(self.url)
+        page = requests.get(self.url, timeout=10)
         soup = BeautifulSoup(page.content, "html.parser")
         bitcoin_values = soup.find_all("div", class_="val")
         compra = int(bitcoin_values[0].get_text()[1:])
