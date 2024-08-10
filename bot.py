@@ -6,6 +6,7 @@ from pycurrencies.dolar_scrapper import DolarScrapper
 
 from utils import dolar_url, bitcoin_url, BOT_TOKEN
 
+
 load_dotenv()
 
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -29,8 +30,8 @@ def dolar_price(message) -> None:
 @bot.message_handler(commands=["bitcoin"])
 def bitcoin_price(message) -> None:
     bitcoin_scraper = BitcoinScrapper(bitcoin_url)
-    compra, venta = bitcoin_scraper.scrape_bitcoin_values()
-    bot.reply_to(message, bitcoin_scraper.send_bitcoin_price(compra, venta))
+    price = bitcoin_scraper.scrape_bitcoin_values()
+    bot.reply_to(message, bitcoin_scraper.send_bitcoin_price(price))
 
 
 @bot.message_handler(func=lambda msg: True)
