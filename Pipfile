@@ -11,6 +11,7 @@ typer = "*"
 build = "*"
 typing-extensions = "*"
 pytelegrambotapi = "*"
+python-semantic-release = "*"
 
 [dev-packages]
 pre-commit = "3.7.0"
