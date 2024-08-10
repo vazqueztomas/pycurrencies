@@ -42,6 +42,3 @@ repository = "https://github.com/vazqueztomas/dolar-scrapper"
 
 [project.scripts]
 dolar-scrap = "pycurrencies.main:main"
-
-
-
