@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Asegúrate de tener todo el historial para Semantic Release
+          fetch-depth: 0
 
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
@@ -26,11 +26,12 @@ jobs:
           pip install pipenv
           pipenv install --dev
 
-      - name: Switch to main branch
-        run: git checkout main
+      - name: Check python-semantic-release installation
+        run: pip show python-semantic-release
 
-      - name: List files
-        run: ls -R
+      - name: Print pyproject.toml content
+        run: cat pyproject.toml
+
       - name: Semantic Release
         uses: python-semantic-release/python-semantic-release@v8.0.0
         with:
