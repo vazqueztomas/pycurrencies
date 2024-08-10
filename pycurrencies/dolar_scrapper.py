@@ -10,12 +10,18 @@ class DolarScrapper:
         self.url = url
 
     def scrape_dolar_values(self) -> int:
-        page = requests.get(self.url, timeout=10)
-        soup = BeautifulSoup(page.content, "html.parser")
-        dolar_values = soup.find_all("div", class_="val")
-        compra = int(dolar_values[0].get_text()[1:])
-        venta = int(dolar_values[1].get_text()[1:])
-        return compra, venta
+        try:
+            page = requests.get(url=self.url, timeout=10)
+            page.raise_for_status()
+        except (requests.Timeout, requests.ConnectionError, requests.HTTPError):
+            return None, None
+        else:
+            soup = BeautifulSoup(page.content, "html.parser")
+            dolar_values = soup.find_all("div", class_="val")
+
+            compra = int(dolar_values[0].get_text()[1:])
+            venta = int(dolar_values[1].get_text()[1:])
+            return compra, venta
 
     def print_dolar_message(self, number1: int, number2: int) -> str:
         return f"""
