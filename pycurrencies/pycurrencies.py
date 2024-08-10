@@ -10,14 +10,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-dolar_url = os.getenv('DOLAR_URL')
-bitcoin_url = os.getenv('BITCOIN_URL')
+dolar_url = os.getenv("DOLAR_URL")
+bitcoin_url = os.getenv("BITCOIN_URL")
+
 
 def dolar_price():
     dolar_scraper = DolarScrapper(dolar_url)
     compra, venta = dolar_scraper.scrape_dolar_values()
     print(dolar_scraper.print_dolar_message(compra, venta))
     raise typer.Exit()
+
 
 def bitcoin_price():
     bitcoin_scraper = BitcoinScrapper(bitcoin_url)
@@ -45,7 +47,7 @@ def main(
         typer.Option(
             "--bitcoin", "-b", help="Obtener información del bitcoin", is_flag=True
         ),
-    ] = None
+    ] = None,
 ):
     print(welcome_message())
     if dolar is not None:
