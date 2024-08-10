@@ -10,7 +10,7 @@ class BitcoinScrapper:
 
     def scrape_bitcoin_values(self) -> int | str | None:
         try:
-            page = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+            page = requests.get(self.url)
             price = page.json()["bpi"]["USD"]["rate"]
         except (requests.exceptions.RequestException, KeyError):
             return None
