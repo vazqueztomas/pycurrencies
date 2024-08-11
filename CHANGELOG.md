@@ -6,6 +6,8 @@
 
 ### Fix
 
+* fix(config): add ignore for push ([`89de0a4`](https://github.com/vazqueztomas/pycurrencies/commit/89de0a4ce1960f177f81763b1d467c686854503f))
+
 * fix(config): fix tabs ([`a30daa0`](https://github.com/vazqueztomas/pycurrencies/commit/a30daa03e4f70d8253f6a6e401468494a84d4673))
 
 * fix(config): fix target branches ([`483add5`](https://github.com/vazqueztomas/pycurrencies/commit/483add592910dc9047656bc1437b423ddb115090))
