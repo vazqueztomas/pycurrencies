@@ -5,6 +5,10 @@ on:
       branches: ["automatic-semantic-release"]
     pull_request:
       branches: ["automatic-semantic-release"]
+
+permissions:
+    contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
