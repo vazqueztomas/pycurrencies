@@ -1,5 +1,14 @@
 # CHANGELOG
 
+
+
+## v0.1.2 (2024-08-11)
+
+### Fix
+
+* fix(config): add new version configuration ([`87e5e0f`](https://github.com/vazqueztomas/pycurrencies/commit/87e5e0f4eed85b01665bc5d72bd0bd179b4194e2))
+
+
 ## v0.1.1 (2024-08-11)
 
 ### Fix
@@ -10,9 +19,11 @@
 
 * fix(config): fix target branches ([`483add5`](https://github.com/vazqueztomas/pycurrencies/commit/483add592910dc9047656bc1437b423ddb115090))
 
+
 ## v0.1.0 (2024-08-11)
 
-## v0.0.1 (2024-08-10)
+
+## v0.0.1 (2024-08-11)
 
 ### Feature
 
