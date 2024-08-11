@@ -2,7 +2,17 @@
 
 
 
+## v0.1.1 (2024-08-11)
+
+### Fix
+
+* fix(config): fix target branches ([`483add5`](https://github.com/vazqueztomas/pycurrencies/commit/483add592910dc9047656bc1437b423ddb115090))
+
+
 ## v0.1.0 (2024-08-11)
+
+
+## v0.0.1 (2024-08-11)
 
 ### Feature
 
