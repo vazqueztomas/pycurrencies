@@ -2,9 +2,9 @@ name: Semantic release
 
 on:
     push:
-      branches: ["automatic-semantic-release"]
+      branches: ["main"]
     pull_request:
-      branches: ["automatic-semantic-release"]
+      branches: ["main"]
 
 permissions:
     contents: write
