@@ -25,9 +25,6 @@ jobs:
           pip install pipenv
           pipenv install --dev
 
-      - name: Switch to main branch
-        run: git checkout main
-
       - name: Semantic Release
         uses: python-semantic-release/python-semantic-release@v8.0.0
         with:
