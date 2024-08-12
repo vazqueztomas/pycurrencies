@@ -36,8 +36,8 @@ jobs:
           set -e
           git fetch -v -v -v --all --unshallow || true
           git switch "${{github.head_ref}}" || git checkout "${{github.head_ref}}"
-          git config user.name "`git log -1 --pretty=format:'%an' | xargs`"
-          git config user.email "`git log -1 --pretty=format:'%ae' | xargs`"
+          git config user.name "$(git log -1 --pretty=format:'%an' | xargs)"
+          git config user.email "$(git log -1 --pretty=format:'%ae' | xargs)"
 
       - name: Update Version and Changelog
         run: |
@@ -46,17 +46,17 @@ jobs:
           semantic-release -v version --no-vcs-release --no-commit
           differences=$(git diff)
 
-          if [-z "$differences"]; then
+          if [ -z "$differences" ]; then
             echo "No changes detected, exiting..."
             exit 0
           fi
 
-          echo 'The version and/or Changelog is outdated, updating...'
-          echo $differences
+          echo "The version and/or Changelog is outdated, updating..."
+          echo "$differences"
 
           git add --all --verbose
           git commit --verbose -m "chore(release): update version and changelog"
           git push --verbose
 
-          sleep 30
-          exit 1
+          echo "Push successful, exiting..."
+          exit 0
