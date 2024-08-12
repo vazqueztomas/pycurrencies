@@ -35,7 +35,7 @@ jobs:
         run: |
           set -e
           git fetch -v -v -v --all --unshallow || true
-          git switch "${{github.ref}}" || git checkout "${{github.ref}}"
+          git switch "${{github.head_ref}}" || git checkout "${{github.head_ref}}"
           git config user.name "`git log -1 --pretty=format:'%an' | xargs`"
           git config user.email "`git log -1 --pretty=format:'%ae' | xargs`"
 
