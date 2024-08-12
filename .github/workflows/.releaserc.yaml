@@ -35,7 +35,17 @@ jobs:
         run: |
           set -e
           git fetch -v -v -v --all --unshallow || true
-          git switch "${{github.head_ref}}" || git checkout "${{github.head_ref}}"
+          ref=${{github.head_ref}}
+          if [-z "$ref"]; then
+            ref=${{github.ref}}
+          fi
+          ref=${ref#refs/heads/}
+          if [-n "$ref"]; then
+            git switch "$ref" || git checkout "$ref"
+          fi
+          else
+            echo "No ref found, exiting..."
+          fi
           git config user.name "$(git log -1 --pretty=format:'%an' | xargs)"
           git config user.email "$(git log -1 --pretty=format:'%ae' | xargs)"
 
