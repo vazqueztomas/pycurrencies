@@ -2,6 +2,23 @@
 
 
 
+## v0.1.3 (2024-08-12)
+
+### Fix
+
+* fix(config): fix typo ([`3220823`](https://github.com/vazqueztomas/pycurrencies/commit/3220823f49243583d50b2895edc8858dab6c45c5))
+
+* fix(config): add correct ref ([`263cbdc`](https://github.com/vazqueztomas/pycurrencies/commit/263cbdcc505231e6713b8703e29300f2c9be051d))
+
+* fix(config): add correct ref ([`b6861db`](https://github.com/vazqueztomas/pycurrencies/commit/b6861db397dcf49d06da6931cf08c3e231aeedb8))
+
+* fix(config): modify semrel ([`0e9c2d9`](https://github.com/vazqueztomas/pycurrencies/commit/0e9c2d9991831f57d11e7beb9582fa8f6c96b592))
+
+* fix(config): modify semrel versions ([`8c5b426`](https://github.com/vazqueztomas/pycurrencies/commit/8c5b426dddf592583c7d93afd55e72148198e59a))
+
+* fix(config): test semrel ([`30270dd`](https://github.com/vazqueztomas/pycurrencies/commit/30270dd24d32fbb6418e0eeae01432daaec31b79))
+
+
 ## v0.1.2 (2024-08-11)
 
 ### Fix
