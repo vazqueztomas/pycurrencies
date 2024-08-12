@@ -43,9 +43,6 @@ jobs:
           if [ -n "$ref" ]; then
             git switch "$ref" || git checkout "$ref"
           fi
-          else
-            echo "No ref found, exiting..."
-          fi
           git config user.name "$(git log -1 --pretty=format:'%an' | xargs)"
           git config user.email "$(git log -1 --pretty=format:'%ae' | xargs)"
 
