@@ -36,11 +36,11 @@ jobs:
           set -e
           git fetch -v -v -v --all --unshallow || true
           ref=${{github.head_ref}}
-          if [-z "$ref"]; then
+          if [ -z "$ref" ]; then
             ref=${{github.ref}}
           fi
           ref=${ref#refs/heads/}
-          if [-n "$ref"]; then
+          if [ -n "$ref" ]; then
             git switch "$ref" || git checkout "$ref"
           fi
           else
