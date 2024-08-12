@@ -6,6 +6,8 @@
 
 ### Fix
 
+* fix(config): fix typo ([`a776dfd`](https://github.com/vazqueztomas/pycurrencies/commit/a776dfd48872b995bb1fc02f75d55c4cc2b269e6))
+
 * fix(config): fix typo ([`3220823`](https://github.com/vazqueztomas/pycurrencies/commit/3220823f49243583d50b2895edc8858dab6c45c5))
 
 * fix(config): add correct ref ([`263cbdc`](https://github.com/vazqueztomas/pycurrencies/commit/263cbdcc505231e6713b8703e29300f2c9be051d))
