@@ -43,7 +43,7 @@ jobs:
         run: |
           set -e
           pipx install --verbose python-semantic-release==8.3.0
-          semantic-release -v version --no-vsc-release --no-commit
+          semantic-release -v version --no-vcs-release --no-commit
           differences=$(git diff)
 
           if [-z "$differences"]; then
