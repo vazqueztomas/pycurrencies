@@ -23,13 +23,40 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install global dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pipenv
-          pipenv install --dev
+          pip install pipx==1.2.0
 
-      - name: Semantic Release
-        uses: python-semantic-release/python-semantic-release@v8.0.0
-        with:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      - name: Set Git Identity
+        run: |
+          set -e
+          git fetch -v -v -v --all --unshallow || true
+          git switch "${{GITHUB_REF#refs/heads/}}" || git switch "${{GITHUB_HEAD_REF}}"
+          git config user.name "`git log -1 --pretty=format:'%an' | xargs`"
+          git config user.email "`git log -1 --pretty=format:'%ae' | xargs`"
+
+      - name: Update Version and Changelog
+        run: |
+          set -e
+          pipx install --verbose python-semantic-release==8.3.0
+          semantic-release -v version --no-vsc-release --no-commit
+          differences=$(git diff)
+
+          if [-z "$differences"]; then
+            echo "No changes detected, exiting..."
+            exit 0
+          fi
+
+          echo 'The version and/or Changelog is outdated, updating...'
+          echo $differences
+
+          git add --all --verbose
+          git commit --verbose -m "chore(release): update version and changelog"
+          git push --verbose
+
+          sleep 30
+          exit 1
