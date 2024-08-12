@@ -6,6 +6,12 @@
 
 ### Fix
 
+* fix(config): remove else ([`e997d53`](https://github.com/vazqueztomas/pycurrencies/commit/e997d53a40b3f203884d79363d8d640930e64e5c))
+
+* fix(config): fix typo error ([`3661257`](https://github.com/vazqueztomas/pycurrencies/commit/3661257eb7d509cd9158880ea2181a41466a8bd5))
+
+* fix(config): fix switch to main ([`b933f71`](https://github.com/vazqueztomas/pycurrencies/commit/b933f71fe5c96afcb5c94673de4c2d2eecb33d14))
+
 * fix(config): fix typo ([`a776dfd`](https://github.com/vazqueztomas/pycurrencies/commit/a776dfd48872b995bb1fc02f75d55c4cc2b269e6))
 
 * fix(config): fix typo ([`3220823`](https://github.com/vazqueztomas/pycurrencies/commit/3220823f49243583d50b2895edc8858dab6c45c5))
