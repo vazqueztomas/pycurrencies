@@ -4,8 +4,8 @@ from termcolor import colored
 import typer
 import os
 
-from pycurrencies.bitcoin_scrapper import BitcoinScrapper
-from pycurrencies.dolar_scrapper import DolarScrapper
+from pycurrencies.scrapers.bitcoin_scrapper import BitcoinScrapper
+from pycurrencies.scrapers.dolar_scrapper import DolarScrapper
 from dotenv import load_dotenv
 
 load_dotenv()

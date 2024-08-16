@@ -2,9 +2,17 @@
 
 
 
-## v0.1.3 (2024-08-12)
+## v0.2.0 (2024-08-16)
+
+### Feature
+
+* feat(config): add new tests ([`d95d5ff`](https://github.com/vazqueztomas/pycurrencies/commit/d95d5ff5219f0de62dd06fdf4f30d41ae87e38ac))
+
+* feat(config): add pytest ([`a95d9e5`](https://github.com/vazqueztomas/pycurrencies/commit/a95d9e518a4204b017e6ab2badd899eeb5d7f9b2))
 
 ### Fix
+
+* fix(config): add pytest mock ([`ce77e63`](https://github.com/vazqueztomas/pycurrencies/commit/ce77e635bd6641024c184beca021023e3fc00f31))
 
 * fix(config): remove else ([`e997d53`](https://github.com/vazqueztomas/pycurrencies/commit/e997d53a40b3f203884d79363d8d640930e64e5c))
 
