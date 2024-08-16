@@ -1,8 +1,8 @@
 import telebot
 from dotenv import load_dotenv
 
-from pycurrencies.bitcoin_scrapper import BitcoinScrapper
-from pycurrencies.dolar_scrapper import DolarScrapper
+from pycurrencies.scrapers.bitcoin_scrapper import BitcoinScrapper
+from pycurrencies.scrapers.dolar_scrapper import DolarScrapper
 
 from utils import dolar_url, bitcoin_url, BOT_TOKEN
 
